@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Teman Ibu</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #25D366;
+  color: white;
+}
+
+button {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Undangan Teman Ibu</h1>
+
+<div class="search-container" style="margin-bottom:15px;">
+  <input type="text" id="searchInput" placeholder="Cari nama tamu..." 
+    style="width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; font-size:16px; box-sizing:border-box;">
+</div>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Nama Undangan</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="guestTableBody">
+
+    <tr>
+      <td>1</td>
+      <td>
+        <input type="text" class="guest-name" value="Yeti" 
+          style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;">
+      </td>
+      <td>
+        <button onclick="shareInvitation(this)">Bagikan</button>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        <input type="text" class="guest-name" value="Alumni SD balonggede" 
+          style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;">
+      </td>
+      <td>
+        <button onclick="shareInvitation(this)">Bagikan</button>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        <input type="text" class="guest-name" value="Keluarga Papap Bogor" 
+          style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;">
+      </td>
+      <td>
+        <button onclick="shareInvitation(this)">Bagikan</button>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        <input type="text" class="guest-name" value="Rai rai Papap" 
+          style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;">
+      </td>
+      <td>
+        <button onclick="shareInvitation(this)">Bagikan</button>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        <input type="text" class="guest-name" value="Seluruh warga PAD" 
+          style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;">
+      </td>
+      <td>
+        <button onclick="shareInvitation(this)">Bagikan</button>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        <input type="text" class="guest-name" value="Alumni 3 sos 7" 
+          style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;">
+      </td>
+      <td>
+        <button onclick="shareInvitation(this)">Bagikan</button>
+      </td>
+    </tr>
+    
+</tbody>
+</table>
+
+<div style="margin-top:20px; text-align:center;">
+  <button onclick="addGuestRow()">+ Tambah Tamu</button>
+</div>
+
+</div>
+
+<script>
+function shareInvitation(buttonElement) {
+
+  const row = buttonElement.closest('tr');
+  const guestName = row.querySelector('.guest-name').value;
+
+  const encodedName = encodeURIComponent(guestName).replace(/%20/g, '+');
+  const invitationUrl = `https://inviding.id/dina-arif/?to=${encodedName}`;
+
+  const text = `Assalamu’alaikum Wr. Wb.
+
+Yth. Bapak/Ibu/Saudara/i
+*${guestName}*
+
+Dengan memohon rahmat dan ridho Allah SWT, tanpa mengurangi rasa hormat, kami sekeluarga bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan putra/putri kami:
+
+*Dina Reidina Risdiani, S.M*
+*&*
+*Arif Nur Rohman, S.Kom*
+
+Untuk informasi lengkap mengenai rangkaian acara, lokasi, dan detail lainnya, silakan mengakses tautan undangan berikut:
+
+_${invitationUrl}_
+
+Mohon kesediaannya untuk melakukan konfirmasi kehadiran melalui fitur RSVP pada link undangan tersebut.
+
+Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan kebahagiaan bagi kami, serta mohon maaf apabila undangan disampaikan secara digital.
+
+Terima kasih atas perhatian dan kehadirannya.
+
+Wassalamu’alaikum Wr. Wb.`;
+
+  if (navigator.share) {
+    navigator.share({
+      title: 'Undangan Pernikahan',
+      text: text
+    });
+  } else {
+    window.open(
+      'https://wa.me/?text=' + encodeURIComponent(text),
+      '_blank'
+    );
+  }
+}
+
+function addGuestRow() {
+  const tbody = document.getElementById('guestTableBody');
+  const rowCount = tbody.rows.length + 1;
+
+  const row = document.createElement('tr');
+
+  row.innerHTML = `
+    <td>${rowCount}</td>
+    <td>
+      <input type="text" class="guest-name" placeholder="Masukkan nama tamu"
+        style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;">
+    </td>
+    <td>
+      <button onclick="shareInvitation(this)">Bagikan</button>
+    </td>
+  `;
+
+  tbody.appendChild(row);
+}
+
+document.getElementById('searchInput').addEventListener('keyup', function () {
+  const filter = this.value.toLowerCase();
+  const rows = document.querySelectorAll('#guestTableBody tr');
+
+  rows.forEach(row => {
+    const input = row.querySelector('.guest-name');
+    const text = input.value.toLowerCase();
+
+    if (text.includes(filter)) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
