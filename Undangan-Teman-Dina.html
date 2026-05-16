@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Teman Dina</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #25D366;
+  color: white;
+}
+
+button {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.guest-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+</style>
+</head>
+
+<body>
+
+
+<h1>Undangan Teman Dina</h1>
+
+<div style="max-width: 500px; margin: 0 auto 20px auto;">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Cari nama undangan..." 
+    style="width:100%; padding:12px; border:1px solid #ccc; border-radius:10px; font-size:16px; box-sizing:border-box;"
+    onkeyup="searchGuest()"
+  >
+</div>
+
+
+<div class="table-container">
+
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Nama Undangan</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="guestTableBody">
+
+<tr>
+  <td>1</td>
+  <td><input type="text" value="Aurisa & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td><input type="text" value="Dheanita & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td><input type="text" value="Rilla & Davit" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>4</td>
+  <td><input type="text" value="Caca & Gumilar" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>5</td>
+  <td><input type="text" value="Risa & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>6</td>
+  <td><input type="text" value="Dina & Daffa" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>7</td>
+  <td><input type="text" value="Kania & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>8</td>
+  <td><input type="text" value="Firantika & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>9</td>
+  <td><input type="text" value="Antika & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>10</td>
+  <td><input type="text" value="Teh Rivani & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>11</td>
+  <td><input type="text" value="Teh Nadila & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>12</td>
+  <td><input type="text" value="Teh Siti & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>13</td>
+  <td><input type="text" value="Widia & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>14</td>
+  <td><input type="text" value="Fadhilah Nur’aini Fajri, Drg. & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>15</td>
+  <td><input type="text" value="Veronica & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>16</td>
+  <td><input type="text" value="Risya & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>17</td>
+  <td><input type="text" value="Faza & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>18</td>
+  <td><input type="text" value="Medina & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>19</td>
+  <td><input type="text" value="Kiki & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>20</td>
+  <td><input type="text" value="Alya & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>21</td>
+  <td><input type="text" value="Jihan & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>22</td>
+  <td><input type="text" value="Fani & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>23</td>
+  <td><input type="text" value="Nadila & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>24</td>
+  <td><input type="text" value="Anggi & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>25</td>
+  <td><input type="text" value="Devi & Hilmi" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>26</td>
+  <td><input type="text" value="Panji & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>27</td>
+  <td><input type="text" value="Maevara & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>28</td>
+  <td><input type="text" value="Aldi & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>29</td>
+  <td><input type="text" value="Rivky & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>30</td>
+  <td><input type="text" value="Grady & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>31</td>
+  <td><input type="text" value="Citra Ismi & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>32</td>
+  <td><input type="text" value="Elma & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>33</td>
+  <td><input type="text" value="Dita & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>34</td>
+  <td><input type="text" value="Delia & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>35</td>
+  <td><input type="text" value="Putri R & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>36</td>
+  <td><input type="text" value="Putri P & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>37</td>
+  <td><input type="text" value="Lathif & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>38</td>
+  <td><input type="text" value="Jihan A & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>39</td>
+  <td><input type="text" value="Nuke & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>40</td>
+  <td><input type="text" value="Karen Widya & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>41</td>
+  <td><input type="text" value="Rifka & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>42</td>
+  <td><input type="text" value="Sri Wawang & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>43</td>
+  <td><input type="text" value="Giani Petra & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>44</td>
+  <td><input type="text" value="Viaranti & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>45</td>
+  <td><input type="text" value="Lulu & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>46</td>
+  <td><input type="text" value="Gina & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>47</td>
+  <td><input type="text" value="Putri S & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>48</td>
+  <td><input type="text" value="Kania Laraswati & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>49</td>
+  <td><input type="text" value="Fadhlani & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>50</td>
+  <td><input type="text" value="Hasbi & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>51</td>
+  <td><input type="text" value="Semidang & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>52</td>
+  <td><input type="text" value="Rifa Fitria & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>53</td>
+  <td><input type="text" value="Ajeng & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>54</td>
+  <td><input type="text" value="Anggi Maulinda & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>55</td>
+  <td><input type="text" value="Teh Sarah & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>56</td>
+  <td><input type="text" value="Chintya (Ceuceu) & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>57</td>
+  <td><input type="text" value="Teh Eka & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>58</td>
+  <td><input type="text" value="Ainun & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>59</td>
+  <td><input type="text" value="Teh Mita & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>60</td>
+  <td><input type="text" value="Yasmin & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>61</td>
+  <td><input type="text" value="Fairuz & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>62</td>
+  <td><input type="text" value="Mba Diah & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>63</td>
+  <td><input type="text" value="Mba Zulfi & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>64</td>
+  <td><input type="text" value="Mba Miftah & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>65</td>
+  <td><input type="text" value="Tata & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>66</td>
+  <td><input type="text" value="Mba Amel & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>67</td>
+  <td><input type="text" value="Mba Rika & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>68</td>
+  <td><input type="text" value="Arina & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>69</td>
+  <td><input type="text" value="Ian & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>70</td>
+  <td><input type="text" value="Kaysa & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>71</td>
+  <td><input type="text" value="Meisya & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>72</td>
+  <td><input type="text" value="Syahdilla & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>73</td>
+  <td><input type="text" value="Bella & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>74</td>
+  <td><input type="text" value="Dini & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>75</td>
+  <td><input type="text" value="Teh Shofi & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>76</td>
+  <td><input type="text" value="Tim CS Monotaro & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>77</td>
+  <td><input type="text" value="Mba Nadia & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>78</td>
+  <td><input type="text" value="Mba Anis & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>79</td>
+  <td><input type="text" value="Mba Senja & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>80</td>
+  <td><input type="text" value="Mba Ria & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>81</td>
+  <td><input type="text" value="Mba Sinta & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>82</td>
+  <td><input type="text" value="Mba Wanda & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>83</td>
+  <td><input type="text" value="Xena & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>84</td>
+  <td><input type="text" value="Ara & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+<tr>
+  <td>85</td>
+  <td><input type="text" value="Mba Rachma & Partner" class="guest-input"></td>
+  <td><button onclick="shareInvitation(this)">Bagikan</button></td>
+</tr>
+
+</tbody>
+
+</table>
+
+<div style="margin-top:20px; text-align:center;">
+  <button onclick="addGuestRow()">+ Tambah Undangan</button>
+</div>
+
+</div>
+
+<script>
+
+function searchGuest() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const rows = document.querySelectorAll('#guestTableBody tr');
+
+  rows.forEach((row) => {
+    const guestInput = row.querySelector('.guest-input');
+    const guestName = guestInput.value.toLowerCase();
+
+    if (guestName.includes(input)) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+}
+
+
+function shareInvitation(buttonElement) {
+
+  const row = buttonElement.closest('tr');
+  const guestName = row.querySelector('.guest-input').value;
+
+  const encodedName = encodeURIComponent(guestName).replace(/%20/g, '+');
+
+  const invitationUrl = `https://inviding.id/dina-arif/?to=${encodedName}`;
+
+  const text = `Assalamu’alaikum Wr. Wb.
+
+Yth. Bapak/Ibu/Saudara/i
+*${guestName}*
+
+Dengan memohon rahmat dan ridho Allah SWT, tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami:
+
+*Dina Reidina Risdiani*
+*&*
+*Arif Nur Rohman*
+
+Untuk informasi lengkap mengenai rangkaian acara, lokasi, dan detail lainnya, silakan mengakses tautan undangan berikut:
+
+_${invitationUrl}_
+
+Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan kebahagiaan bagi kami, serta mohon maaf apabila undangan disampaikan secara digital.
+
+Terima kasih atas perhatian dan kehadirannya.
+
+Wassalamu’alaikum Wr. Wb.`;
+
+  if (navigator.share) {
+    navigator.share({
+      title: 'Undangan Pernikahan',
+      text: text
+    });
+  } else {
+    window.open(
+      'https://wa.me/?text=' + encodeURIComponent(text),
+      '_blank'
+    );
+  }
+}
+
+function addGuestRow() {
+
+  const tableBody = document.getElementById('guestTableBody');
+  const rowCount = tableBody.rows.length + 1;
+
+  const newRow = `
+    <tr>
+      <td>${rowCount}</td>
+      <td>
+        <input type="text" value="" class="guest-input" placeholder="Nama tamu">
+      </td>
+      <td>
+        <button onclick="shareInvitation(this)">Bagikan</button>
+      </td>
+    </tr>
+  `;
+
+  tableBody.insertAdjacentHTML('beforeend', newRow);
+}
+
+</script>
+
+</body>
+</html>
